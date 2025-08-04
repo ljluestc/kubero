@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: external-dns-config
+  namespace: kubero-system
+  labels:
+    app: external-dns
+    kubero.dev/addon: "true"
+data:
+  domain-filter: "example.com"
+  provider: "cloudflare"
+  policy: "upsert-only"
+  txt-owner-id: "kubero"
